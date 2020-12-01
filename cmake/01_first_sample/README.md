@@ -1,5 +1,5 @@
 
-## step
+## Step
 
 	$ mkdir build
 	$ cd build
