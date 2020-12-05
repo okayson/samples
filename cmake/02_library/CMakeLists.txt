@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.1)
+project(lib_sample CXX)
+add_subdirectory(./mylib)
+add_executable(lib_sample_app main.cpp)
+target_link_libraries(lib_sample_app mylib)
