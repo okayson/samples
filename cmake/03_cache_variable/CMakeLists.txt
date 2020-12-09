@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.1)
+set(VAR1 hoge)
+set(VAR2 ${VAR1} CACHE STRING "Cache variable")
+message(STATUS "## VAR1 : ${VAR1}")
+message(STATUS "## VAR2 : ${VAR2}")
