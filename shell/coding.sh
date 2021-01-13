@@ -31,31 +31,48 @@ fi
 
 # ':' means the option needs option argument. 
 # It's avairable to type 'command -ab'.
+opt_a="off"
+opt_b="off"
+opt_f="off"
 while getopts abf:h OPT
 do
   case $OPT in
     a)
-      FLAG_A="on"
-      echo "FLAG_A is $FLAG_A"
+      opt_a="on"
       ;;
     b)
-      FLAG_B="on"
-      echo "FLAG_B is $FLAG_B"
+      opt_b="on"
       ;;
     f)
-      ARG_F=$OPTARG
-      echo "ARG_F is $ARG_F"
+      opt_f=$OPTARG
       ;;
     h)
       usage
       ;;
     \?)
       echo "Try to enter the h option." 1>&2
+      exit 1
       ;;
   esac
 done
 
+echo "-a is $opt_a"
+echo "-b is $opt_b"
+echo "-f is $opt_f"
+
+echo "Argument is $#."
+echo "Argument before shift: $*"
 shift $((OPTIND - 1))
+echo "Argument after  shift: $*"
+echo "Argument is $#."
+
+if [ $# -ge 1 ]; then
+  echo "arg is $1"
+else
+  echo "arg is none"
+fi
+
+
 # Parse arguments }}}
 
 # Constant variable: use 'readonly' with upper case.
