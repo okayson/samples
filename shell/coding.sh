@@ -36,18 +36,17 @@ do
   case $OPT in
     a)
       FLAG_A="on"
-      echo "FLAG_A is $FLAG_A"            # for debug
+      echo "FLAG_A is $FLAG_A"
       ;;
     b)
       FLAG_B="on"
-      echo "FLAG_B is $FLAG_B"            # for debug
+      echo "FLAG_B is $FLAG_B"
       ;;
     f)
       ARG_F=$OPTARG
-      echo "ARG_F is $ARG_F"              # for debug
+      echo "ARG_F is $ARG_F"
       ;;
     h)
-      echo "h option. display help"       # for debug
       usage
       ;;
     \?)
