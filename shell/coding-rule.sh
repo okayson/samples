@@ -1,4 +1,8 @@
 #!/bin/bash
+# vim: shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+
+# Set current directory
+cd `dirname $0`
 
 # Usage
 function usage() {
@@ -124,4 +128,3 @@ __EOT__
 # cf. https://qiita.com/ma91n/items/5f72ca668f1c58176644
 # cf. https://qiita.com/b4b4r07/items/dcd6be0bb9c9185475bb
 
-# vim: shiftwidth=2 softtabstop=2 tabstop=2 expandtab
