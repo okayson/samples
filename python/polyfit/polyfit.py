@@ -6,13 +6,14 @@ import pandas as pd
 # np.polyfit(x,y,1)で１次近似
 # np.poly1d(np.polyfit(x,y,1))で関数生成
 # np.poly1d(np.polyfit(x,y,1))(arg)でargによる計算
+
 data = np.loadtxt('./data.txt')
 print(data)
 x = data[:,0]
 y = data[:,1]
 slope,intercept = np.polyfit(x, y, 1)
-print("傾き",slope)
-print("切片",intercept)
+print("Slope",slope)
+print("Intercept",intercept)
 
 si = np.polyfit(x, y, 1)
 func = np.poly1d(si)
@@ -21,8 +22,10 @@ y1 = func(x)
 plt.figure()
 plt.scatter(x,y)
 plt.plot(x,y1)
-# plt.savefig('./polyfit1.png')
+plt.savefig('./polyfit1.png')
 plt.close('all')
+
+# pandas.DataFrameで描画する
 
 df = pd.DataFrame([
     [2,3],
@@ -45,6 +48,7 @@ plt.plot(df['Col1'],
 plt.savefig('./polyfit2.png')
 plt.close('all')
 
+# DataFrameに新しい列を追加して描画時に指定する
 df['Near'] = func(df['Col1'])
 print(df)
 
@@ -57,10 +61,8 @@ print(label)
 
 plt.figure()
 ax = df.plot.scatter(x='Col1', y='Col2', alpha=0.5)
-df.plot.line(x='Col1', y='Near', alpha=0.5, style='g',label=label, ax=ax)
+df.plot.line(x='Col1', y='Near', alpha=0.5, style='g:',label=label, ax=ax)
 
 plt.savefig('./polyfit3.png')
 plt.close('all')
 
-# ax = df.plot(y='petal_length')
-# df.plot(y='petal_width', ax=ax)
