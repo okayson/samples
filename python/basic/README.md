@@ -2,12 +2,12 @@
 
 ## coding style
 
-PEP8
+PEP8  
 https://pep8-ja.readthedocs.io/ja/latest/
 
 ## packeage
 
-Pythonでよく使われるパッケージのリスト
+Pythonでよく使われるパッケージのリスト  
 https://github.com/vinta/awesome-python
 
 
