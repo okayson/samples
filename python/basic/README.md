@@ -1,5 +1,7 @@
 # Basic
 
+Pythonの基本的なこと。
+
 ## help
 
 	$ python
